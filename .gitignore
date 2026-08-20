@@ -1,13 +1,22 @@
-# Virtual environment
-venv/
-.venv/
-
 # Environment variables
+backend/.env
 .env
 
-# Python
+# Python virtual environments
+backend/venv/
+backend/.venv/
+backend/Lib/
+backend/Scripts/
+backend/Include/
+backend/pyvenv.cfg
+
+# Python cache
 __pycache__/
 *.py[cod]
+
+# Frontend
+node_modules/
+dist/
 
 # IDE
 .vscode/
@@ -16,9 +25,3 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-
-# Alembic cache
-alembic/__pycache__/
