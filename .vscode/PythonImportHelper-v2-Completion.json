@@ -233,6 +233,14 @@
         "documentation": {}
     },
     {
+        "label": "get_db",
+        "importPath": "app.core.database",
+        "description": "app.core.database",
+        "isExtraImport": true,
+        "detail": "app.core.database",
+        "documentation": {}
+    },
+    {
         "label": "Base",
         "importPath": "app.core.database",
         "description": "app.core.database",
@@ -281,19 +289,51 @@
         "documentation": {}
     },
     {
-        "label": "BaseSettings",
-        "importPath": "pydantic_settings",
-        "description": "pydantic_settings",
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "pydantic_settings",
+        "detail": "fastapi",
         "documentation": {}
     },
     {
-        "label": "SettingsConfigDict",
-        "importPath": "pydantic_settings",
-        "description": "pydantic_settings",
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
         "isExtraImport": true,
-        "detail": "pydantic_settings",
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
@@ -417,6 +457,110 @@
         "documentation": {}
     },
     {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "hash_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterRequest",
+        "importPath": "app.schemas.auth",
+        "description": "app.schemas.auth",
+        "isExtraImport": true,
+        "detail": "app.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequest",
+        "importPath": "app.schemas.auth",
+        "description": "app.schemas.auth",
+        "isExtraImport": true,
+        "detail": "app.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "TokenResponse",
+        "importPath": "app.schemas.auth",
+        "description": "app.schemas.auth",
+        "isExtraImport": true,
+        "detail": "app.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "RegisterRequest",
+        "importPath": "app.schemas.auth",
+        "description": "app.schemas.auth",
+        "isExtraImport": true,
+        "detail": "app.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "register_user",
+        "importPath": "app.services.auth",
+        "description": "app.services.auth",
+        "isExtraImport": true,
+        "detail": "app.services.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate_user",
+        "importPath": "app.services.auth",
+        "description": "app.services.auth",
+        "isExtraImport": true,
+        "detail": "app.services.auth",
+        "documentation": {}
+    },
+    {
+        "label": "BaseSettings",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
+        "label": "SettingsConfigDict",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
         "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
@@ -513,11 +657,27 @@
         "documentation": {}
     },
     {
-        "label": "verify_password",
-        "importPath": "backend.app.core.security",
-        "description": "backend.app.core.security",
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "detail": "backend.app.core.security",
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -545,6 +705,14 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
         "label": "Project",
         "importPath": "app.models.project",
         "description": "app.models.project",
@@ -569,11 +737,11 @@
         "documentation": {}
     },
     {
-        "label": "FastAPI",
-        "importPath": "fastapi",
-        "description": "fastapi",
+        "label": "router",
+        "importPath": "app.api.auth",
+        "description": "app.api.auth",
         "isExtraImport": true,
-        "detail": "fastapi",
+        "detail": "app.api.auth",
         "documentation": {}
     },
     {
@@ -649,6 +817,33 @@
         "documentation": {}
     },
     {
+        "label": "register",
+        "kind": 2,
+        "importPath": "backend.app.api.auth",
+        "description": "backend.app.api.auth",
+        "peekOfCode": "def register(\n    user_data: RegisterRequest,\n    db: Session = Depends(get_db),\n):\n    user = register_user(\n        db=db,\n        user_data=user_data\n    )\n    if not user:\n        raise HTTPException(",
+        "detail": "backend.app.api.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "backend.app.api.auth",
+        "description": "backend.app.api.auth",
+        "peekOfCode": "def login(\n    login_data: LoginRequest,\n    db: Session = Depends(get_db)\n):\n    user = authenticate_user(\n        db=db,\n        email=login_data.email,\n        password=login_data.password\n    )\n    if not user:",
+        "detail": "backend.app.api.auth",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.api.auth",
+        "description": "backend.app.api.auth",
+        "peekOfCode": "router = APIRouter(\n    prefix=\"/auth\",\n    tags=[\"Authentication\"]\n)\n@router.post(\"/register\")\ndef register(\n    user_data: RegisterRequest,\n    db: Session = Depends(get_db),\n):\n    user = register_user(",
+        "detail": "backend.app.api.auth",
+        "documentation": {}
+    },
+    {
         "label": "Settings",
         "kind": 6,
         "importPath": "backend.app.core.config",
@@ -671,7 +866,16 @@
         "kind": 6,
         "importPath": "backend.app.core.database",
         "description": "backend.app.core.database",
-        "peekOfCode": "class Base(DeclarativeBase):\n    pass",
+        "peekOfCode": "class Base(DeclarativeBase):\n    pass\ndef get_db():\n    db = SessionLocal()\n    try: \n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "kind": 2,
+        "importPath": "backend.app.core.database",
+        "description": "backend.app.core.database",
+        "peekOfCode": "def get_db():\n    db = SessionLocal()\n    try: \n        yield db\n    finally:\n        db.close()",
         "detail": "backend.app.core.database",
         "documentation": {}
     },
@@ -680,7 +884,7 @@
         "kind": 5,
         "importPath": "backend.app.core.database",
         "description": "backend.app.core.database",
-        "peekOfCode": "engine = create_engine(settings.DATABASE_URL)\nSessionLocal = sessionmaker(\n    bind=engine,\n    autoflush=False,\n    autocommit=False,\n)\nclass Base(DeclarativeBase):\n    pass",
+        "peekOfCode": "engine = create_engine(settings.DATABASE_URL)\nSessionLocal = sessionmaker(\n    bind=engine,\n    autoflush=False,\n    autocommit=False,\n)\nclass Base(DeclarativeBase):\n    pass\ndef get_db():\n    db = SessionLocal()",
         "detail": "backend.app.core.database",
         "documentation": {}
     },
@@ -689,7 +893,7 @@
         "kind": 5,
         "importPath": "backend.app.core.database",
         "description": "backend.app.core.database",
-        "peekOfCode": "SessionLocal = sessionmaker(\n    bind=engine,\n    autoflush=False,\n    autocommit=False,\n)\nclass Base(DeclarativeBase):\n    pass",
+        "peekOfCode": "SessionLocal = sessionmaker(\n    bind=engine,\n    autoflush=False,\n    autocommit=False,\n)\nclass Base(DeclarativeBase):\n    pass\ndef get_db():\n    db = SessionLocal()\n    try: ",
         "detail": "backend.app.core.database",
         "documentation": {}
     },
@@ -725,7 +929,7 @@
         "kind": 2,
         "importPath": "backend.app.core.security",
         "description": "backend.app.core.security",
-        "peekOfCode": "def decode_access_token(token: str) -> dict | None:\n    try:\n        payload = jwt.decode(\n            token,\n            settings.SECRET_KEY,\n            algorithms=[settings.ALGORITHM],\n        )\n        return payload\n    except JWTError:\n        return None",
+        "peekOfCode": "def decode_access_token(token: str) -> dict | None:\n    try:\n        return jwt.decode(\n            token,\n            settings.SECRET_KEY,\n            algorithms=[settings.ALGORITHM],\n        )\n    except JWTError:\n        return None",
         "detail": "backend.app.core.security",
         "documentation": {}
     },
@@ -775,6 +979,33 @@
         "documentation": {}
     },
     {
+        "label": "RegisterRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas.auth",
+        "description": "backend.app.schemas.auth",
+        "peekOfCode": "class RegisterRequest(BaseModel):\n    first_name: str = Field(\n        min_length=2,\n        max_length=100\n    )\n    last_name: str = Field(\n        min_length=2,\n        max_length=100\n    )\n    email: EmailStr",
+        "detail": "backend.app.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas.auth",
+        "description": "backend.app.schemas.auth",
+        "peekOfCode": "class LoginRequest(BaseModel):\n    email: EmailStr\n    password: str\nclass TokenResponse(BaseModel):\n    access_token: str\n    token_type: str = \"bearer\"",
+        "detail": "backend.app.schemas.auth",
+        "documentation": {}
+    },
+    {
+        "label": "TokenResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas.auth",
+        "description": "backend.app.schemas.auth",
+        "peekOfCode": "class TokenResponse(BaseModel):\n    access_token: str\n    token_type: str = \"bearer\"",
+        "detail": "backend.app.schemas.auth",
+        "documentation": {}
+    },
+    {
         "label": "ProjectCreate",
         "kind": 6,
         "importPath": "backend.app.schemas.project",
@@ -820,6 +1051,24 @@
         "documentation": {}
     },
     {
+        "label": "register_user",
+        "kind": 2,
+        "importPath": "backend.app.services.auth",
+        "description": "backend.app.services.auth",
+        "peekOfCode": "def register_user(\n    db: Session,\n    user_data: RegisterRequest,\n):\n    #check whether the email already exists\n    existing_user = (\n        db.query(User)\n        .filter(User.email == user_data.email)\n        .first()\n    )",
+        "detail": "backend.app.services.auth",
+        "documentation": {}
+    },
+    {
+        "label": "authenticate_user",
+        "kind": 2,
+        "importPath": "backend.app.services.auth",
+        "description": "backend.app.services.auth",
+        "peekOfCode": "def authenticate_user(\n    db: Session,\n    email: str,\n    password: str\n):\n    # find the user using their email\n    user = (\n        db.query(User)\n        .filter(User.email == email)\n        .first()",
+        "detail": "backend.app.services.auth",
+        "documentation": {}
+    },
+    {
         "label": "create_project",
         "kind": 2,
         "importPath": "backend.app.services.project",
@@ -842,7 +1091,7 @@
         "kind": 5,
         "importPath": "backend.app.main",
         "description": "backend.app.main",
-        "peekOfCode": "app = FastAPI(\n    title=\"sitesphere API\",\n    description=\"Backend API for the SiteSphere construction collaboration platform\",\n    version=\"1.0.0\",\n)\n@app.get(\"/\")\ndef root():\n    return {\n        \"message\" \"Welcome to SiteSphere API\"\n    }",
+        "peekOfCode": "app = FastAPI(\n    title=\"sitesphere API\",\n    description=\"Backend API for the SiteSphere construction collaboration platform\",\n    version=\"1.0.0\",\n)\napp.include_router(auth_router)\n@app.get(\"/\")\ndef root():\n    return {\n        \"message\" \"Welcome to SiteSphere API\"",
         "detail": "backend.app.main",
         "documentation": {}
     }
