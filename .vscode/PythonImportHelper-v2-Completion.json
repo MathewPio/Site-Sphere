@@ -241,6 +241,22 @@
         "documentation": {}
     },
     {
+        "label": "get_db",
+        "importPath": "app.core.database",
+        "description": "app.core.database",
+        "isExtraImport": true,
+        "detail": "app.core.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "app.core.database",
+        "description": "app.core.database",
+        "isExtraImport": true,
+        "detail": "app.core.database",
+        "documentation": {}
+    },
+    {
         "label": "Base",
         "importPath": "app.core.database",
         "description": "app.core.database",
@@ -321,11 +337,75 @@
         "documentation": {}
     },
     {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
         "isExtraImport": true,
         "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
@@ -353,6 +433,14 @@
         "documentation": {}
     },
     {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
         "label": "Mapped",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
@@ -462,10 +550,34 @@
         "description": "sqlalchemy.orm",
         "isExtraImport": true,
         "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
         "documentation": {}
     },
     {
         "label": "create_access_token",
+        "importPath": "app.core.security",
+        "description": "app.core.security",
+        "isExtraImport": true,
+        "detail": "app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "decode_access_token",
         "importPath": "app.core.security",
         "description": "app.core.security",
         "isExtraImport": true,
@@ -542,6 +654,94 @@
         "description": "app.services.auth",
         "isExtraImport": true,
         "detail": "app.services.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "app.dependencies.auth",
+        "description": "app.dependencies.auth",
+        "isExtraImport": true,
+        "detail": "app.dependencies.auth",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models.user",
+        "description": "app.models.user",
+        "isExtraImport": true,
+        "detail": "app.models.user",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectCreate",
+        "importPath": "app.schemas.project",
+        "description": "app.schemas.project",
+        "isExtraImport": true,
+        "detail": "app.schemas.project",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectResponse",
+        "importPath": "app.schemas.project",
+        "description": "app.schemas.project",
+        "isExtraImport": true,
+        "detail": "app.schemas.project",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectCreate",
+        "importPath": "app.schemas.project",
+        "description": "app.schemas.project",
+        "isExtraImport": true,
+        "detail": "app.schemas.project",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectUpdate",
+        "importPath": "app.schemas.project",
+        "description": "app.schemas.project",
+        "isExtraImport": true,
+        "detail": "app.schemas.project",
+        "documentation": {}
+    },
+    {
+        "label": "create_project",
+        "importPath": "app.services.project",
+        "description": "app.services.project",
+        "isExtraImport": true,
+        "detail": "app.services.project",
+        "documentation": {}
+    },
+    {
+        "label": "get_projects",
+        "importPath": "app.services.project",
+        "description": "app.services.project",
+        "isExtraImport": true,
+        "detail": "app.services.project",
+        "documentation": {}
+    },
+    {
+        "label": "get_project_by_id",
+        "importPath": "app.services.project",
+        "description": "app.services.project",
+        "isExtraImport": true,
+        "detail": "app.services.project",
         "documentation": {}
     },
     {
@@ -705,14 +905,6 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "app.models.user",
-        "description": "app.models.user",
-        "isExtraImport": true,
-        "detail": "app.models.user",
-        "documentation": {}
-    },
-    {
         "label": "Project",
         "importPath": "app.models.project",
         "description": "app.models.project",
@@ -721,27 +913,19 @@
         "documentation": {}
     },
     {
-        "label": "ProjectCreate",
-        "importPath": "app.schemas.project",
-        "description": "app.schemas.project",
-        "isExtraImport": true,
-        "detail": "app.schemas.project",
-        "documentation": {}
-    },
-    {
-        "label": "ProjectUpdate",
-        "importPath": "app.schemas.project",
-        "description": "app.schemas.project",
-        "isExtraImport": true,
-        "detail": "app.schemas.project",
-        "documentation": {}
-    },
-    {
         "label": "router",
         "importPath": "app.api.auth",
         "description": "app.api.auth",
         "isExtraImport": true,
         "detail": "app.api.auth",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "app.api.projects",
+        "description": "app.api.projects",
+        "isExtraImport": true,
+        "detail": "app.api.projects",
         "documentation": {}
     },
     {
@@ -830,7 +1014,7 @@
         "kind": 2,
         "importPath": "backend.app.api.auth",
         "description": "backend.app.api.auth",
-        "peekOfCode": "def login(\n    login_data: LoginRequest,\n    db: Session = Depends(get_db)\n):\n    user = authenticate_user(\n        db=db,\n        email=login_data.email,\n        password=login_data.password\n    )\n    if not user:",
+        "peekOfCode": "def login(\n    form_data: OAuth2PasswordRequestForm = Depends(),\n    db: Session = Depends(get_db)\n):\n    user = authenticate_user(\n        db=db,\n        email=form_data.username,\n        password=form_data.password\n    )\n    if not user:",
         "detail": "backend.app.api.auth",
         "documentation": {}
     },
@@ -841,6 +1025,42 @@
         "description": "backend.app.api.auth",
         "peekOfCode": "router = APIRouter(\n    prefix=\"/auth\",\n    tags=[\"Authentication\"]\n)\n@router.post(\"/register\")\ndef register(\n    user_data: RegisterRequest,\n    db: Session = Depends(get_db),\n):\n    user = register_user(",
         "detail": "backend.app.api.auth",
+        "documentation": {}
+    },
+    {
+        "label": "create_new_project",
+        "kind": 2,
+        "importPath": "backend.app.api.projects",
+        "description": "backend.app.api.projects",
+        "peekOfCode": "def create_new_project(\n    project_data: ProjectCreate,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user)\n):\n    project = create_project(\n        db=db,\n        project_data=project_data,\n        organization_id=current_user.organization_id,\n    )",
+        "detail": "backend.app.api.projects",
+        "documentation": {}
+    },
+    {
+        "label": "get_all_projects",
+        "kind": 2,
+        "importPath": "backend.app.api.projects",
+        "description": "backend.app.api.projects",
+        "peekOfCode": "def get_all_projects(\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    projects = get_projects(\n        db=db,\n        organization_id=current_user.organization_id,\n    )\n    return projects\n@router.get(",
+        "detail": "backend.app.api.projects",
+        "documentation": {}
+    },
+    {
+        "label": "get_single_project",
+        "kind": 2,
+        "importPath": "backend.app.api.projects",
+        "description": "backend.app.api.projects",
+        "peekOfCode": "def get_single_project(\n    project_id: int,\n    db: Session = Depends(get_db),\n    current_user: User = Depends(get_current_user),\n):\n    project = get_project_by_id(\n        db=db,\n        project_id=project_id,\n        organization_id=current_user.organization_id\n    )",
+        "detail": "backend.app.api.projects",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.api.projects",
+        "description": "backend.app.api.projects",
+        "peekOfCode": "router = APIRouter(\n    prefix=\"/projects\",\n    tags=[\"Projects\"]\n)\n@router.post(\n    \"\",\n    response_model=ProjectResponse,\n    status_code=status.HTTP_201_CREATED,\n)\ndef create_new_project(",
+        "detail": "backend.app.api.projects",
         "documentation": {}
     },
     {
@@ -940,6 +1160,24 @@
         "description": "backend.app.core.security",
         "peekOfCode": "pwd_context = CryptContext(\n    schemes=[\"bcrypt\"],\n    deprecated=\"auto\",\n)\ndef hash_password(password: str) -> str:\n    return pwd_context.hash(password)\ndef verify_password(\n    plain_password: str,\n    hashed_password: str,\n) -> bool:",
         "detail": "backend.app.core.security",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "kind": 2,
+        "importPath": "backend.app.dependencies.auth",
+        "description": "backend.app.dependencies.auth",
+        "peekOfCode": "def get_current_user(\n    token: str = Depends(oauth2_scheme),\n    db: Session = Depends(get_db),\n):\n    # Decode the JWT\n    payload = decode_access_token(token)\n    if payload is None:\n        raise HTTPException(\n            status_code=status.HTTP_401_UNAUTHORIZED,\n            detail=\"Invalid or expired token\",",
+        "detail": "backend.app.dependencies.auth",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme",
+        "kind": 5,
+        "importPath": "backend.app.dependencies.auth",
+        "description": "backend.app.dependencies.auth",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(\n    tokenUrl=\"/auth/login\"\n)\ndef get_current_user(\n    token: str = Depends(oauth2_scheme),\n    db: Session = Depends(get_db),\n):\n    # Decode the JWT\n    payload = decode_access_token(token)\n    if payload is None:",
+        "detail": "backend.app.dependencies.auth",
         "documentation": {}
     },
     {
@@ -1078,6 +1316,24 @@
         "documentation": {}
     },
     {
+        "label": "get_projects",
+        "kind": 2,
+        "importPath": "backend.app.services.project",
+        "description": "backend.app.services.project",
+        "peekOfCode": "def get_projects(\n    db: Session,\n    organization_id: int,\n):\n    projects = (\n        db.query(Project)\n        .filter(\n            Project.organization_id == organization_id\n        )\n        .all()",
+        "detail": "backend.app.services.project",
+        "documentation": {}
+    },
+    {
+        "label": "get_project_by_id",
+        "kind": 2,
+        "importPath": "backend.app.services.project",
+        "description": "backend.app.services.project",
+        "peekOfCode": "def get_project_by_id(\n    db: Session,\n    project_id: int,\n    organization_id: int,\n):\n    project = (\n        db.query(Project)\n        .filter(\n            Project.id == project_id,\n            Project.organization_id == organization_id,",
+        "detail": "backend.app.services.project",
+        "documentation": {}
+    },
+    {
         "label": "root",
         "kind": 2,
         "importPath": "backend.app.main",
@@ -1091,7 +1347,7 @@
         "kind": 5,
         "importPath": "backend.app.main",
         "description": "backend.app.main",
-        "peekOfCode": "app = FastAPI(\n    title=\"sitesphere API\",\n    description=\"Backend API for the SiteSphere construction collaboration platform\",\n    version=\"1.0.0\",\n)\napp.include_router(auth_router)\n@app.get(\"/\")\ndef root():\n    return {\n        \"message\" \"Welcome to SiteSphere API\"",
+        "peekOfCode": "app = FastAPI(\n    title=\"sitesphere API\",\n    description=\"Backend API for the SiteSphere construction collaboration platform\",\n    version=\"1.0.0\",\n)\napp.include_router(auth_router)\napp.include_router(projects_router)\n@app.get(\"/\")\ndef root():\n    return {",
         "detail": "backend.app.main",
         "documentation": {}
     }
