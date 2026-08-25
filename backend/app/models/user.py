@@ -72,3 +72,14 @@ class User(Base):
         "Role",
         back_populates="users"
     )
+    
+    project_memberships = relationship(
+        "ProjectMember",
+        back_populates="user",
+        cascade="all, delete-orphan"
+    )
+    
+    assigned_tasks = relationship(
+        "Task",
+        back_populates="assigned_user"
+    )

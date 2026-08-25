@@ -65,3 +65,16 @@ class Project(Base):
         "Organization",
         back_populates="projects"
     )
+    
+    members = relationship(
+        "ProjectMember",
+        back_populates="project",
+        cascade="all, delete-orphan"
+    )
+    
+    tasks = relationship(
+        "Task",
+        back_populates="project",
+        cascade="all, delete-orphan",
+    )
+    

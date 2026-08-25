@@ -50,3 +50,53 @@ def get_project_by_id(
     )
     
     return project
+
+
+
+def update_project(
+    db: Session,
+    project_id: int,
+    organization_id: int,
+    project_data: ProjectUpdate
+):
+    project = get_project_by_id(
+        db=db,
+        project_id=project_id,
+        organization_id=organization_id,
+    )
+    
+    if not project:
+        return None
+    
+    update_data = project_data.model_dump(
+        exclude_unset=True
+    )
+    
+    for field, value in update_data.items():
+        setattr(project, field, value)
+        
+    db.commit()
+    db.refresh(project)
+    
+    return project
+
+
+
+def delete_project(
+    db: Session,
+    project_id: int,
+    organization_id: int,
+):
+    project = get_project_by_id(
+        db=db,
+        project_id=project_id,
+        organization_id=organization_id,
+    )
+    
+    if not project:
+        return False
+    
+    db.delete(project)
+    db.commit()
+    
+    return True
