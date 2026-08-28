@@ -34,6 +34,19 @@ from app.services.project_member import (
     remove_project_member,
 )
 
+from app.schemas.task import (
+    TaskCreate,
+    TaskResponse,
+    TaskUpdate,
+)
+
+from app.services.task import (
+    create_task,
+    get_project_tasks,
+    get_task,
+    update_task,
+    delete_task,
+)
 
 router = APIRouter(
     prefix="/projects",
@@ -253,4 +266,167 @@ def remove_member_from_project(
             detail="Project member not found",
         )
         
+    return None
+
+
+
+@router.post(
+    "/{project_id}/tasks",
+    response_model=TaskResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+def create_project_task(
+    project_id: int,
+    task_data: TaskCreate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    # project_id comes from the URL.
+    # organization_id comes from the authenticated user.
+    # task_data contains the information submitted in the request body.
+    
+    task, error = create_task(
+        db=db,
+        project_id=project_id,
+        organization_id=current_user.organization_id,
+        task_data=task_data
+    )
+    
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found"
+        )
+        
+    if error == "user_not_project_member":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Assigned user is not a member of this project",
+        )
+        
+    return task
+
+
+@router.get(
+    "/projects/{project_id}/tasks",
+    response_model=list[TaskResponse],
+)
+def list_project_tasks(
+    project_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    tasks = get_project_tasks(
+        db=db,
+        project_id=project_id,
+        organization_id=current_user.organization_id
+    )
+    
+    if tasks is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found"
+        )
+        
+    return tasks
+
+
+@router.get(
+    "/projects/{project_id}/tasks/{task_id}",
+    response_model=TaskResponse,
+)
+def get_project_task(
+    project_id: int,
+    task_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    task = get_task(
+        db=db,
+        project_id=project_id,
+        task_id=task_id,
+        organization_id=current_user.organization_id,
+    )
+    
+    if not task:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Task not found",
+        )
+        
+    return task
+
+
+
+@router.patch(
+    "/projects/{project_id}/tasks/{task_id}",
+    response_model=TaskResponse,
+)
+def update_project_task(
+    task_data: TaskUpdate,
+    task_id: int,
+    project_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    task, error = update_task(
+        db=db,
+        project_id=project_id,
+        task_id=task_id,
+        organization_id=current_user.organization_id,
+        task_data=task_data,
+    )
+    
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found"
+        )
+        
+    if error == "task_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Task not found"
+        )
+        
+    if error == "user_not_project_member":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="User is not a member of this project"
+        )
+    
+    return task
+
+
+
+@router.delete(
+    "/projects/{project_id}/tasks/{task_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+)
+def delete_project_task(
+    project_id: int,
+    task_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    _, error = delete_task(
+        db=db,
+        project_id=project_id,
+        task_id=task_id,
+        organization_id=current_user.organization_id,
+    )
+    
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found"
+        )
+        
+    if error == "task_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Task not found"
+        )
+    
+    
     return None
