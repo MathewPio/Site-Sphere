@@ -47,6 +47,12 @@ from app.services.task import (
     update_task,
     delete_task,
 )
+from app.schemas.project_update import (
+    ProjectUpdateCreate,
+    ProjectUpdateResponse,
+    ProjectUpdateUpdate,
+)
+from app.services.project_update import create_project_update
 
 router = APIRouter(
     prefix="/projects",
@@ -428,5 +434,39 @@ def delete_project_task(
             detail="Task not found"
         )
     
-    
     return None
+
+
+
+@router.post(
+    "/projects/{project_id}/updates",
+    response_model=ProjectUpdateResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+def create_the_project_update(
+    project_id: int,
+    create_data: ProjectUpdateCreate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    project_update, error = create_project_update(
+        db=db,
+        organization_id=current_user.organization_id,
+        project_id=project_id,
+        user_id=current_user.id,
+        update_data=create_data,
+    )
+    
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found",
+        )
+        
+    if error == "user_not_project_member":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You are not a member of this project",
+        )
+        
+    return project_update
