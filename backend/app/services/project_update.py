@@ -50,5 +50,35 @@ def create_project_update(
     db.refresh(project_update)
     
     return project_update, None
+
+
+
+def get_project_updates(
+    db: Session,
+    project_id: int,
+    organization_id: int,
+):
+    project = (
+        db.query(Project)
+        .filter(
+            Project.id == project_id,
+            Project.organization_id == organization_id,
+        )
+        .first()
+    )
     
+    if not project:
+        return None, "project_not_found"
+    
+    
+    project_updates = (
+        db.query(ProjectUpdate)
+        .filter(
+            ProjectUpdate.project_id == project_id
+        )
+        .order_by(ProjectUpdate.created_at.desc())
+        .all()
+    )
+    
+    return project_updates, None
     

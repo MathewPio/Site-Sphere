@@ -52,7 +52,10 @@ from app.schemas.project_update import (
     ProjectUpdateResponse,
     ProjectUpdateUpdate,
 )
-from app.services.project_update import create_project_update
+from app.services.project_update import (
+    create_project_update,
+    get_project_updates,
+)
 
 router = APIRouter(
     prefix="/projects",
@@ -470,3 +473,28 @@ def create_the_project_update(
         )
         
     return project_update
+
+
+
+@router.get(
+    "/projects/{project_id}/updates",
+    response_model=list[ProjectUpdateResponse]
+)
+def list_project_updates(
+    project_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    project_updates, error = get_project_updates(
+        db=db,
+        project_id=project_id,
+        organization_id=current_user.organization_id,
+    )
+
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found"
+        )
+        
+    return project_updates
