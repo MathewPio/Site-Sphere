@@ -55,7 +55,9 @@ from app.schemas.project_update import (
 from app.services.project_update import (
     create_project_update,
     get_project_updates,
+    get_project_update,
 )
+from app.services.project_update import update_project_update
 
 router = APIRouter(
     prefix="/projects",
@@ -498,3 +500,82 @@ def list_project_updates(
         )
         
     return project_updates
+
+
+
+@router.get(
+    "/projects/{project_id}/updates/{update_id}",
+    response_model=ProjectUpdateResponse
+)
+def the_project_update(
+    project_id: int,
+    update_id: int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    project_update, error = get_project_update(
+        db=db,
+        organization_id=current_user.organization_id,
+        project_id=project_id,
+        update_id=update_id,
+    )
+    
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found",
+        )
+        
+    if error == "update_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project update not found"
+        )
+        
+    
+    return project_update
+
+
+
+@router.patch(
+    "/projects/{project_id}/updates/{update_id}",
+    response_model=ProjectUpdateResponse,
+)
+def edit_update_project(
+    project_id: int,
+    update_id: int,
+    update_data: ProjectUpdateUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    update, error = update_project_update(
+        db=db,
+        organization_id=current_user.organization_id,
+        update_id=update_id,
+        project_id=project_id,
+        update_data=update_data,
+        user_id=current_user.id,
+    )
+    
+    if error == "not_update_owner":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You are not allowed to edit this project update",
+        )
+        
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found",
+        )
+        
+    if error == "update_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Update not found",
+        )
+        
+    return update
+        
+        
+        
