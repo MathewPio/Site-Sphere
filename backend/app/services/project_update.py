@@ -164,3 +164,46 @@ def update_project_update(
     db.refresh(project_update)
     
     return project_update, None
+
+
+
+def delete_project_update(
+    db: Session,
+    project_id: int,
+    update_id: int,
+    organization_id: int,
+    user_id: int,
+):
+    project = (
+        db.query(Project)
+        .filter(
+            Project.id == project_id,
+            Project.organization_id == organization_id,
+        )
+        .first()
+    )
+    
+    if not project:
+        return False, "project_not_found"
+    
+    
+    project_update = (
+        db.query(ProjectUpdate)
+        .filter(
+            ProjectUpdate.id == update_id,
+            ProjectUpdate.project_id == project_id,
+        )
+        .first()
+    )
+    
+    if not project_update:
+        return False, "update_not_found"
+    
+    
+    if project_update.user_id != user_id:
+        return False, "not_update_owner"
+    
+    db.delete(project_update)
+    db.commit()
+    
+    return True, None

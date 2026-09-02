@@ -57,7 +57,10 @@ from app.services.project_update import (
     get_project_updates,
     get_project_update,
 )
-from app.services.project_update import update_project_update
+from app.services.project_update import (
+    update_project_update,
+    delete_project_update,
+)
 
 router = APIRouter(
     prefix="/projects",
@@ -579,3 +582,40 @@ def edit_update_project(
         
         
         
+@router.delete(
+    "/projects/{project_id}/updates/{update_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+)
+def remove_project_update(
+    project_id:int,
+    update_id:int,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    _, error = delete_project_update(
+        db=db,
+        organization_id=current_user.organization_id,
+        user_id=current_user.id,
+        project_id=project_id,
+        update_id=update_id,
+    )
+    
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found",
+        )
+        
+    if error == "update_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Update not found"
+        )
+        
+    if error == "not_update_owner":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="You are not permitted to delete this"
+        )
+        
+    return None
