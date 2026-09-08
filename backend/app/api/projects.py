@@ -3,6 +3,8 @@ from fastapi import (
     Depends,
     HTTPException,
     status,
+    UploadFile,
+    File,
 )
 from sqlalchemy.orm import Session
 
@@ -61,6 +63,11 @@ from app.services.project_update import (
     update_project_update,
     delete_project_update,
 )
+
+from app.services.project_update_image import (
+    create_project_update_image,
+)
+from app.schemas.product_update_image import ProjectUpdateImageResponse
 
 router = APIRouter(
     prefix="/projects",
@@ -619,3 +626,64 @@ def remove_project_update(
         )
         
     return None
+
+
+
+@router.post(
+    "/projects/{project_id}/updates/{update_id}/images",
+    status_code=status.HTTP_201_CREATED,
+    response_model=ProjectUpdateImageResponse,
+)
+def upload_image_file(
+    project_id: int,
+    update_id: int,
+    image: UploadFile = File(...),
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db),
+):
+    image_upload, error = create_project_update_image(
+        db=db,
+        organization_id=current_user.organization_id,
+        user_id=current_user.id,
+        update_id=update_id,
+        project_id=project_id, 
+        image=image,  
+    )
+    
+    if error == "project_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Project not found",
+        )
+        
+    if error == "update_not_found":
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Update not found",
+        )
+        
+    if error == "user_not_project_member":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="User not a project member",
+        )
+    
+    if error == "invalid_image_extension":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid image extension",
+        )
+        
+    if error == "invalid_image_type":
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid image type",
+        )
+        
+    if error == "image_save_failed":
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Image save failed",
+        )
+        
+    return image_upload
